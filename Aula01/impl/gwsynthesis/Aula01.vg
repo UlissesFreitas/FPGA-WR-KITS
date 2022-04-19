@@ -1,0 +1,50 @@
+//
+//Written by GowinSynthesis
+//Product Version "GowinSynthesis V1.9.8.05"
+//Tue Apr 19 06:49:14 2022
+
+//Source file index table:
+//file0 "\C:/Users/rulisso/Documents/FPGA/Aula01/Aula01/src/my_and.vhd"
+`timescale 100 ps/100 ps
+module my_and (
+  a,
+  b,
+  o
+)
+;
+input a;
+input b;
+output o;
+wire a_d;
+wire b_d;
+wire o_d;
+wire VCC;
+wire GND;
+  IBUF a_ibuf (
+    .O(a_d),
+    .I(a) 
+);
+  IBUF b_ibuf (
+    .O(b_d),
+    .I(b) 
+);
+  OBUF o_obuf (
+    .O(o),
+    .I(o_d) 
+);
+  LUT2 o_d_s (
+    .F(o_d),
+    .I0(a_d),
+    .I1(b_d) 
+);
+defparam o_d_s.INIT=4'h8;
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* my_and */

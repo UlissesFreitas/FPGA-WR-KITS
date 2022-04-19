@@ -1,9 +1,10 @@
 -- Autor: Ulisses Freitas 
 -- Data: 16/04/2022
--- Curso de FPGAs do youtube WR KITS
+-- Curso de FPGAs do WR KITS
+-- FPGA GW1N, tang nano 
 
 library ieee;
-use ieee.std_logic_1164.all
+use ieee.std_logic_1164.all;
 
 entity my_and is
 port(
